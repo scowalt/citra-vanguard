@@ -13,7 +13,7 @@ file(GLOB CLR_FILES
     VanguardClient.h
     VanguardClient.cpp
 )
-set_source_files_properties(${CLR_FILES} PROPERTIES COMPILE_FLAGS "/clr /EHa /Zc:twoPhase-")
+set_source_files_properties(${CLR_FILES} PROPERTIES COMPILE_FLAGS "/EHa /Zc:twoPhase-")
 set_target_properties(vanguard PROPERTIES VS_DOTNET_REFERENCES_COPY_LOCAL ON )
 set_target_properties(vanguard PROPERTIES DOTNET_TARGET_FRAMEWORK_VERSION "v4.7.1")
 set_target_properties(vanguard PROPERTIES VS_DOTNET_REFERENCE_CorruptCore "${PROJECT_SOURCE_DIR}/../../../RTCV/Build/CorruptCore.dll")
