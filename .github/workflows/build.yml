@@ -22,12 +22,16 @@ jobs:
         nuget-version: 'latest'
     - name: Restore Nuget packages in RTCV
       run: nuget restore '.\RTCV\'
-    - name: Create build directory
-      working-directory: ${{runner.workspace}}\citra-vanguard\citra-vanguard
-      run: New-Item -ItemType Directory -Path build
-    - name: Citra prebuild
-      run: cmd /C 'cd citra-vanguard\build && cmake -G "Visual Studio 15 2017 Win64" -DCITRA_USE_BUNDLED_QT=1 -DCITRA_USE_BUNDLED_SDL2=1 -DCITRA_ENABLE_COMPATIBILITY_REPORTING=${COMPAT} -DENABLE_COMPATIBILITY_LIST_DOWNLOAD=ON -DUSE_DISCORD_PRESENCE=ON  -DENABLE_MF=ON -DENABLE_FFMPEG_VIDEO_DUMPER=ON .. 2>&1 && exit 0'
-    - name: Citra build
+    - name: Make directory for citra output
+      shell: powershell
+      run: New-Item -ItemType directory -Path ${{runner.workspace}}\citra-vanguard\citra-vanguard\build
+    - name: Citra prebuild # "Visual Studio 16 2019" doesn't work
+      shell: cmd
       run: |
-        cd citra-vanguard\build
+        cd ${{runner.workspace}}\citra-vanguard\citra-vanguard\build
+        cmake -G "Visual Studio 15 2017 Win64" -DCITRA_USE_BUNDLED_QT=1 -DCITRA_USE_BUNDLED_SDL2=1 -DENABLE_COMPATIBILITY_LIST_DOWNLOAD=ON -DUSE_DISCORD_PRESENCE=ON -DENABLE_MF=ON -DENABLE_FFMPEG_VIDEO_DUMPER=ON .. 2>&1 && exit 0
+    - name: Citra Build
+      run: |
+        cd ${{runner.workspace}}\citra-vanguard\citra-vanguard\build
         & "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\MSBuild.exe" citra.sln
+    
