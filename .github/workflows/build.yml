@@ -21,7 +21,7 @@ jobs:
     - name: Restore Nuget packages in RTCV
       run: nuget restore '.\RTCV\'
     - name: Build RTCV
-      run: msbuild '.RTCV\RTCV.sln'
+      run: msbuild '.\RTCV\RTCV.sln'
 
     # citra
     - name: Checkout current build target
