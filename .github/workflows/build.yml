@@ -5,11 +5,7 @@ jobs:
   build:
     runs-on: windows-2019
     steps:
-    - name: Checkout current build target
-      uses: actions/checkout@v2
-      with:
-        path: 'citra-vanguard'
-        submodules: 'recursive'
+    # RTCV
     - name: Checkout RTCV peer dependency
       uses: actions/checkout@v2
       with:
@@ -24,7 +20,16 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.0
     - name: Restore Nuget packages in RTCV
       run: nuget restore '.\RTCV\'
-    - name: Create build directory
+    - name: Build RTCV
+      run: msbuild '.RTCV\RTCV.sln'
+
+    # citra
+    - name: Checkout current build target
+      uses: actions/checkout@v2
+      with:
+        path: 'citra-vanguard'
+        submodules: 'recursive'
+    - name: Create Citra build directory
       working-directory: ${{runner.workspace}}\citra-vanguard\citra-vanguard
       run: New-Item -ItemType Directory -Path build
     - name: Citra prebuild
