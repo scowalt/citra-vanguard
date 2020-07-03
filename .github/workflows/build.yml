@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: windows-2016
+    runs-on: windows-2019
     steps:
     - name: Checkout current build target
       uses: actions/checkout@v2
@@ -20,14 +20,18 @@ jobs:
       uses: nuget/setup-nuget@v1.0.2
       with:
         nuget-version: 'latest'
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v1.0.0
     - name: Restore Nuget packages in RTCV
       run: nuget restore '.\RTCV\'
     - name: Create build directory
       working-directory: ${{runner.workspace}}\citra-vanguard\citra-vanguard
       run: New-Item -ItemType Directory -Path build
     - name: Citra prebuild
-      run: cmd /C 'cd citra-vanguard\build && cmake -G "Visual Studio 15 2017 Win64" -DCITRA_USE_BUNDLED_QT=1 -DCITRA_USE_BUNDLED_SDL2=1 -DCITRA_ENABLE_COMPATIBILITY_REPORTING=${COMPAT} -DENABLE_COMPATIBILITY_LIST_DOWNLOAD=ON -DUSE_DISCORD_PRESENCE=ON  -DENABLE_MF=ON -DENABLE_FFMPEG_VIDEO_DUMPER=ON .. 2>&1 && exit 0'
+      run: |
+        cd citra-vanguard\build
+        cmake ..
     - name: Citra build
       run: |
         cd citra-vanguard\build
-        & "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\MSBuild.exe" citra.sln
+        msbuild citra.sln
