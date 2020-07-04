@@ -15,7 +15,6 @@
 #include <QtConcurrent/QtConcurrentRun>
 #include <QtGui>
 #include <QtWidgets>
-#include <fmt/format.h>
 #ifdef __APPLE__
 #include <unistd.h> // for chdir
 #endif
@@ -46,7 +45,6 @@
 #include "citra_qt/debugger/registers.h"
 #include "citra_qt/debugger/wait_tree.h"
 #include "citra_qt/discord.h"
-#include "citra_qt/game_list.h"
 #include "citra_qt/hotkeys.h"
 #include "citra_qt/loading_screen.h"
 #include "citra_qt/main.h"
@@ -58,10 +56,8 @@
 #include "common/common_paths.h"
 #include "common/detached_tasks.h"
 #include "common/file_util.h"
-#include "common/logging/backend.h"
 #include "common/logging/filter.h"
 #include "common/logging/log.h"
-#include "common/logging/text_formatter.h"
 #include "common/microprofile.h"
 #include "common/scm_rev.h"
 #include "common/scope_exit.h"
@@ -69,23 +65,7 @@
 #include "common/x64/cpu_detect.h"
 #endif
 #include "core/core.h"
-#include "core/dumping/backend.h"
-#include "core/file_sys/archive_extsavedata.h"
-#include "core/file_sys/archive_source_sd_savedata.h"
 #include "core/frontend/applets/default_applets.h"
-#include "core/frontend/scope_acquire_context.h"
-#include "core/gdbstub/gdbstub.h"
-#include "core/hle/service/fs/archive.h"
-#include "core/hle/service/nfc/nfc.h"
-#include "core/loader/loader.h"
-#include "core/movie.h"
-#include "core/savestate.h"
-#include "core/settings.h"
-#include "game_list_p.h"
-#include "video_core/renderer_base.h"
-#include "video_core/video_core.h"
-#include "Vanguard/VanguardClientInitializer.h"
-#include "Vanguard/VanguardClient.h"
 
 #ifdef _WIN32
 extern "C" {
@@ -93,6 +73,7 @@ extern "C" {
 __declspec(dllexport) unsigned long NvOptimusEnablement = 0x00000001;
 }
 #endif
+
 #ifdef main
 #undef main
 #endif
