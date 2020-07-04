@@ -250,6 +250,7 @@ endif()
 
 create_target_directory_groups(citra-qt)
 
+target_include_directories(citra-qt PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/citra-qt-lib_autogen/include_${CMAKE_BUILD_TYPE}>)
 target_link_libraries(citra-qt PRIVATE citra-qt-lib vanguardwrapper)
 target_link_libraries(citra-qt PRIVATE ${PLATFORM_LIBRARIES} nihstro-headers Qt5::Multimedia)
 
