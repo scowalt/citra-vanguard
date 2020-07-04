@@ -9,6 +9,7 @@
 
 class INIReader;
 
+namespace Citra {
 class Config {
     std::unique_ptr<INIReader> sdl2_config;
     std::string sdl2_config_loc;
@@ -22,3 +23,4 @@ public:
 
     void Reload();
 };
+}

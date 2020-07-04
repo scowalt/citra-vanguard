@@ -35,7 +35,7 @@ jobs:
     - name: Citra prebuild
       run: |
         cd citra-vanguard\build
-        cmake ..
+        cmake .. -DCMAKE_BUILD_TYPE=Debug
     - name: Citra build
       run: |
         cd citra-vanguard\build

@@ -7,5 +7,5 @@ add_library(vanguardwrapper STATIC
     UnmanagedWrapper.cpp
 )
 
-target_link_libraries(vanguardwrapper PUBLIC vanguard fmt Qt5::Widgets)
+target_link_libraries(vanguardwrapper PUBLIC vanguard fmt Qt5::Widgets citra-qt-lib)
 target_link_libraries(vanguardwrapper PUBLIC Boost::boost PRIVATE Boost::serialization)

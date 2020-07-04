@@ -19,6 +19,7 @@
 #include "input_common/main.h"
 #include "input_common/udp/client.h"
 
+namespace Citra {
 Config::Config() {
     // TODO: Don't hardcode the path; let the frontend decide where to put the config files.
     sdl2_config_loc = FileUtil::GetUserPath(FileUtil::UserPath::ConfigDir) + "sdl2-config.ini";
@@ -303,4 +304,5 @@ void Config::ReadValues() {
 void Config::Reload() {
     LoadINI(DefaultINI::sdl2_config_file);
     ReadValues();
+}
 }
