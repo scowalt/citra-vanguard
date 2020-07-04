@@ -101,7 +101,7 @@ void Config::ReadValues() {
         "Controls", "udp_input_address", InputCommon::CemuhookUDP::DEFAULT_ADDR);
     Settings::values.current_input_profile.udp_input_port =
         static_cast<u16>(sdl2_config->GetInteger("Controls", "udp_input_port",
-                                                InputCommon::CemuhookUDP::DEFAULT_PORT));
+                                                 InputCommon::CemuhookUDP::DEFAULT_PORT));
 
     // Core
     Settings::values.use_cpu_jit = sdl2_config->GetBoolean("Core", "use_cpu_jit", true);
