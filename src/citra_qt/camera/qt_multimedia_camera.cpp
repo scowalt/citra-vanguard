@@ -8,7 +8,7 @@
 #include <QMessageBox>
 #include <QThread>
 #include "citra_qt/camera/qt_multimedia_camera.h"
-#include "citra_qt/main.h"
+#include "citra_qt/GMainWindow.h"
 
 namespace Camera {
 

@@ -8,7 +8,7 @@
 #include <QRegExpValidator>
 #include <QString>
 #include <QtConcurrent/QtConcurrentRun>
-#include "citra_qt/main.h"
+#include "citra_qt/GMainWindow.h"
 #include "citra_qt/multiplayer/client_room.h"
 #include "citra_qt/multiplayer/direct_connect.h"
 #include "citra_qt/multiplayer/message.h"

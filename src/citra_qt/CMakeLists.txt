@@ -117,14 +117,15 @@ add_executable(citra-qt
     game_list_p.h
     game_list_worker.cpp
     game_list_worker.h
+    GMainWindow.cpp
+    GMainWindow.h
     hotkeys.cpp
     hotkeys.h
     loading_screen.cpp
     loading_screen.h
     loading_screen.ui
     main.cpp
-    main.h
-    main.ui
+    GMainWindow.ui
     multiplayer/chat_room.cpp
     multiplayer/chat_room.h
     multiplayer/chat_room.ui

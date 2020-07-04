@@ -9,7 +9,7 @@
 #include <core\movie.h>
 
 #include <qapplication.h>
-#include "citra_qt/main.h"
+#include "citra_qt/GMainWindow.h"
 #include <core\settings.h>
 #include <core\hle\service\cfg\cfg.h>
 

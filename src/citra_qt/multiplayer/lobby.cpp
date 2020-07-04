@@ -6,7 +6,7 @@
 #include <QList>
 #include <QtConcurrent/QtConcurrentRun>
 #include "citra_qt/game_list_p.h"
-#include "citra_qt/main.h"
+#include "citra_qt/GMainWindow.h"
 #include "citra_qt/multiplayer/client_room.h"
 #include "citra_qt/multiplayer/lobby.h"
 #include "citra_qt/multiplayer/lobby_p.h"

@@ -16,7 +16,7 @@
 #include "core/core.h"
 #include "core/hle/service/am/am.h"
 #include "core/savestate.h"
-#include "ui_main.h"
+#include "ui_GMainWindow.h"
 
 class AboutDialog;
 class Config;

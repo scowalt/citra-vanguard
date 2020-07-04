@@ -1,8 +1,8 @@
 
 set(CMAKE_AUTOUIC ON)
 add_library(vanguardwrapper STATIC
-    ../citra_qt/main.h
-    ../citra_qt/main.ui
+    ../citra_qt/GMainWindow.h
+    ../citra_qt/GMainWindow.ui
     UnmanagedWrapper.h
     UnmanagedWrapper.cpp
 )
