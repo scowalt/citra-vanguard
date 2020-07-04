@@ -120,13 +120,13 @@ add_library(citra-qt-lib STATIC
     game_list_p.h
     game_list_worker.cpp
     game_list_worker.h
-    main.cpp
-    main.h
     hotkeys.cpp
     hotkeys.h
     loading_screen.cpp
     loading_screen.h
     loading_screen.ui
+    main.cpp
+    main.h
     main.ui
     multiplayer/chat_room.cpp
     multiplayer/chat_room.h
@@ -252,6 +252,7 @@ create_target_directory_groups(citra-qt)
 
 target_link_libraries(citra-qt PRIVATE citra-qt-lib vanguardwrapper)
 target_link_libraries(citra-qt PRIVATE ${PLATFORM_LIBRARIES} nihstro-headers Qt5::Multimedia)
+
 target_link_libraries(citra-qt-lib PRIVATE audio_core common core input_common network video_core vanguard)
 target_link_libraries(citra-qt-lib PRIVATE Boost::boost glad nihstro-headers Qt5::OpenGL Qt5::Widgets Qt5::Multimedia)
 target_link_libraries(citra-qt-lib PRIVATE Threads::Threads)
