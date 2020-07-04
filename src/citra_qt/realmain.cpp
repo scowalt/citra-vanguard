@@ -6,35 +6,16 @@
 #include <fstream>
 #include <memory>
 #include <thread>
-#include <QDesktopWidget>
-#include <QFileDialog>
-#include <QFutureWatcher>
-#include <QMessageBox>
 #include <QOpenGLFunctions_3_3_Core>
-#include <QSysInfo>
-#include <QtConcurrent/QtConcurrentRun>
-#include <QtGui>
-#include <QtWidgets>
 #ifdef __APPLE__
 #include <unistd.h> // for chdir
 #endif
-#include "citra_qt/aboutdialog.h"
 #include "citra_qt/applets/mii_selector.h"
 #include "citra_qt/applets/swkbd.h"
 #include "citra_qt/camera/qt_multimedia_camera.h"
 #include "citra_qt/camera/still_image_camera.h"
-#include "citra_qt/compatdb.h"
-#include "citra_qt/compatibility_list.h"
-#include "citra_qt/configuration/config.h"
-#include "citra_qt/configuration/configure_dialog.h"
-#include "citra_qt/debugger/console.h"
-#include "citra_qt/debugger/lle_service_modules.h"
-#include "citra_qt/debugger/wait_tree.h"
 #include "citra_qt/main.h"
 #include "citra_qt/qt_image_interface.h"
-#include "citra_qt/uisettings.h"
-#include "citra_qt/updater/updater.h"
-#include "citra_qt/util/clickable_label.h"
 #include "common/common_paths.h"
 #include "common/detached_tasks.h"
 #include "common/file_util.h"
