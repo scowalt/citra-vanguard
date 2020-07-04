@@ -18,37 +18,19 @@
 #ifdef __APPLE__
 #include <unistd.h> // for chdir
 #endif
-#ifdef _WIN32
-#include <windows.h>
-#endif
 #include "citra_qt/aboutdialog.h"
 #include "citra_qt/applets/mii_selector.h"
 #include "citra_qt/applets/swkbd.h"
-#include "citra_qt/bootmanager.h"
 #include "citra_qt/camera/qt_multimedia_camera.h"
 #include "citra_qt/camera/still_image_camera.h"
-#include "citra_qt/cheats.h"
 #include "citra_qt/compatdb.h"
 #include "citra_qt/compatibility_list.h"
 #include "citra_qt/configuration/config.h"
 #include "citra_qt/configuration/configure_dialog.h"
 #include "citra_qt/debugger/console.h"
-#include "citra_qt/debugger/graphics/graphics.h"
-#include "citra_qt/debugger/graphics/graphics_breakpoints.h"
-#include "citra_qt/debugger/graphics/graphics_cmdlists.h"
-#include "citra_qt/debugger/graphics/graphics_surface.h"
-#include "citra_qt/debugger/graphics/graphics_tracing.h"
-#include "citra_qt/debugger/graphics/graphics_vertex_shader.h"
-#include "citra_qt/debugger/ipc/recorder.h"
 #include "citra_qt/debugger/lle_service_modules.h"
-#include "citra_qt/debugger/profiler.h"
-#include "citra_qt/debugger/registers.h"
 #include "citra_qt/debugger/wait_tree.h"
-#include "citra_qt/discord.h"
-#include "citra_qt/hotkeys.h"
-#include "citra_qt/loading_screen.h"
 #include "citra_qt/main.h"
-#include "citra_qt/multiplayer/state.h"
 #include "citra_qt/qt_image_interface.h"
 #include "citra_qt/uisettings.h"
 #include "citra_qt/updater/updater.h"
@@ -56,10 +38,7 @@
 #include "common/common_paths.h"
 #include "common/detached_tasks.h"
 #include "common/file_util.h"
-#include "common/logging/filter.h"
-#include "common/logging/log.h"
 #include "common/microprofile.h"
-#include "common/scm_rev.h"
 #include "common/scope_exit.h"
 #ifdef ARCHITECTURE_x86_64
 #include "common/x64/cpu_detect.h"
