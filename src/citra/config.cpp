@@ -19,6 +19,7 @@
 #include "input_common/main.h"
 #include "input_common/udp/client.h"
 
+namespace Citra {
 Config::Config() {
     // TODO: Don't hardcode the path; let the frontend decide where to put the config files.
     sdl2_config_loc = FileUtil::GetUserPath(FileUtil::UserPath::ConfigDir) + "sdl2-config.ini";
@@ -100,7 +101,7 @@ void Config::ReadValues() {
         "Controls", "udp_input_address", InputCommon::CemuhookUDP::DEFAULT_ADDR);
     Settings::values.current_input_profile.udp_input_port =
         static_cast<u16>(sdl2_config->GetInteger("Controls", "udp_input_port",
-                                                 InputCommon::CemuhookUDP::DEFAULT_PORT));
+                                                InputCommon::CemuhookUDP::DEFAULT_PORT));
 
     // Core
     Settings::values.use_cpu_jit = sdl2_config->GetBoolean("Core", "use_cpu_jit", true);
@@ -303,4 +304,5 @@ void Config::ReadValues() {
 void Config::Reload() {
     LoadINI(DefaultINI::sdl2_config_file);
     ReadValues();
+}
 }

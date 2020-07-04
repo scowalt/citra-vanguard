@@ -58,6 +58,8 @@ __declspec(dllexport) unsigned long NvOptimusEnablement = 0x00000001;
 }
 #endif
 
+using namespace Citra;
+
 static void PrintHelp(const char* argv0) {
     std::cout << "Usage: " << argv0
               << " [options] <filename>\n"

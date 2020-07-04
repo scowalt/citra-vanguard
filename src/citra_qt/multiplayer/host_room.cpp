@@ -12,7 +12,7 @@
 #include <QTime>
 #include <QtConcurrent/QtConcurrentRun>
 #include "citra_qt/game_list_p.h"
-#include "citra_qt/GMainWindow.h"
+#include "citra_qt/main.h"
 #include "citra_qt/multiplayer/host_room.h"
 #include "citra_qt/multiplayer/message.h"
 #include "citra_qt/multiplayer/state.h"

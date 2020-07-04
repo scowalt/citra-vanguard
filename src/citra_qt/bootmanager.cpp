@@ -15,7 +15,7 @@
 #include <QWindow>
 #include <fmt/format.h>
 #include "citra_qt/bootmanager.h"
-#include "citra_qt/GMainWindow.h"
+#include "citra_qt/main.h"
 #include "common/microprofile.h"
 #include "common/scm_rev.h"
 #include "core/3ds.h"
